@@ -2,13 +2,27 @@
 
 <html lang="{{ request.locale.iso_code }}" dir="{% render 'direction' %}">
   <head>
+ {%- if content_for_header contains 'tapita-seo-script-tags' -%}{%- include 'tapita-seo-schema' -%}{%- endif -%} 
+
+  {%- render 'header_file' -%}
+  {%- render 'ecom_header' -%}
+  
+  <script>
+    /* start spd config */
+    window._spt_delay_keywords=["/gtag/js,gtag(,/checkouts,/tiktok-track.js,/hotjar-,/smile-,/adoric.js,/wpm/,fbq("];
+    /* end spd config */
+  </script> 
+  
+  {%- if content_for_header contains 'tapita-seo-script-tags' -%}
+    {%- include 'tapita-seo-schema' -%}
+  {%- endif -%} 
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, maximum-scale=5.0">
-
     <title>{% if page_title == blank %}{{ shop.name }}{% else %}{{ page_title }}{% if current_page != 1 %} &ndash; P{{current_page }}{% endif %}{% endif %}</title>
 
     {%- if page_description -%}
-      <meta name="description" content="{{ page_description | escape }}">
+    <meta name="description" content="{{ page_description | truncate: 160, '' | escape }}">
     {%- endif -%}
 
     <link rel="canonical" href="{{ canonical_url }}">
@@ -21,6 +35,7 @@
     {%- comment -%}Few prefetch to increase performance on commonly used third-parties{%- endcomment -%}
     <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
 
+    {% comment %}
     {%- unless settings.heading_font.system? -%}
       <link rel="preload" href="{{ settings.heading_font | font_url }}" as="font" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -28,7 +43,53 @@
     {%- unless settings.text_font.system? -%}
       <link rel="preload" href="{{ settings.text_font | font_url }}" as="font" type="font/woff2" crossorigin>
     {%- endunless -%}
+    {% endcomment %}
 
+
+    <script>
+      window.addEventListener('load', function() {
+    setTimeout(function() {
+        // Preload the fonts
+        var preloadLinks = `
+        <link rel="preload" href="//www.coegawear.com/cdn/fonts/playfair_display/playfairdisplay_n7.1e0ea1cc7a9e4ffdfd6c80b1742be1b89bbe2665.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=da5723b4f7e6522e486fb289132df7672a919dac991696add8927b14ae68e52b" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="//www.coegawear.com/cdn/fonts/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=9d773b354655adc11c157156faa1bdb4d000c037e585456efde0287161b95446" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="//www.coegawear.com/cdn/fonts/montserrat/montserrat_n7.c496e9cf2031deec4c4bca338faa81971c8631d4.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=0e542ce84ae54d557f1cdc96adaddeafb53e531697e8a7f10e60943662e20ca8" as="font" type="font/woff2" crossorigin>
+        `;
+        document.head.insertAdjacentHTML('beforeend', preloadLinks);
+
+        // Add the font-face styles
+        var styleTag = document.createElement('style');
+        styleTag.innerHTML = `
+            @font-face {
+                font-family: Playfair Display;
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+                src: url(//www.coegawear.com/cdn/fonts/playfair_display/playfairdisplay_n7.1e0ea1cc7a9e4ffdfd6c80b1742be1b89bbe2665.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=da5723b4f7e6522e486fb289132df7672a919dac991696add8927b14ae68e52b) format("woff2");
+            }
+            @font-face {
+                font-family: Montserrat;
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+                src: url(//www.coegawear.com/cdn/fonts/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=9d773b354655adc11c157156faa1bdb4d000c037e585456efde0287161b95446) format("woff2");
+            }
+            @font-face {
+                font-family: Montserrat;
+                font-weight: 700;
+                font-style: normal;
+                font-display: swap;
+                src: url(//www.coegawear.com/cdn/fonts/montserrat/montserrat_n7.c496e9cf2031deec4c4bca338faa81971c8631d4.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=0e542ce84ae54d557f1cdc96adaddeafb53e531697e8a7f10e60943662e20ca8) format("woff2");
+            }
+        `;
+        document.head.appendChild(styleTag);
+    }, 3000); // Delay by 4 seconds
+});
+
+    </script>
+    
+    <link data-href="{{- 'font.css' | asset_url -}}" rel="stylesheet" />
+    
     {%- render 'social-meta-tags' -%}
     {%- render 'microdata-schema' -%}
     {%- render 'css-variables' -%}
@@ -59,38 +120,56 @@
       }
     </script>
 
-    <script type="module" src="{{ 'vendor.min.js' | asset_url }}"></script>
-    <script type="module" src="{{ 'theme.js' | asset_url }}"></script>
+    <script data-appco-type="module" type="lazyload_js" data-src="{{ 'vendor.min.js' | asset_url }}"></script>
+    <script data-appco-type="module" type="lazyload_js" data-src="{{ 'theme.js' | asset_url }}"></script>
 
-    {{ content_for_header }}
+    {%- if request.design_mode or template contains 'cart' or template contains 'checkout' -%}
+            {{ content_for_header }}
+    {%- else -%}
+            {% capture content_for_header2 %}{{ content_for_header }}{% endcapture %}
+            {{ content_for_header2 | replace: ' defer="defer" ', ' type="lazyload_js" ' | replace: " src=", " data-src="| replace: "DOMContentLoaded", "appco-DOMContentLoaded" | replace: "window.addEventListener('load', asyncLoad, false);", "window.addEventListener('appco-DOMContentLoaded', asyncLoad, false);" | replace: "addEventListener('load', prefetchAssets);", "addEventListener('appco-DOMContentLoaded', prefetchAssets);" }}
+            <script>var trekkie=[];trekkie.integrations=!0;window.BOOMR={},window.BOOMR.version=true;</script>
+    {%- endif -%}
 
-    {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
+    {% comment %}
+    {%- render 'theme-css' -%}
+    {% endcomment %}
+    
+    <link href="{{- 'theme.css' | asset_url -}}" rel="stylesheet" />
+    
+    {% include 'pagefly-app-header' %}
+    {%- render 'custom-css' -%}
+    {%- render 'app-block' -%}
+    
   </head>
 
-  {% liquid
-    assign features_class = ''
+    {% liquid
+      assign features_class = ''
+  
+      if settings.show_button_transition
+        assign features_class = features_class | append: 'features--button-transition '
+      endif
+  
+      if settings.show_image_zoom_on_hover
+        assign features_class = features_class | append: 'features--zoom-image '
+      endif
+  
+      if settings.show_page_transition
+        assign features_class = features_class | append: 'features--page-transition '
+      endif
+    %}
 
-    if settings.show_button_transition
-      assign features_class = features_class | append: 'features--button-transition '
-    endif
-
-    if settings.show_image_zoom_on_hover
-      assign features_class = features_class | append: 'features--zoom-image '
-    endif
-
-    if settings.show_page_transition
-      assign features_class = features_class | append: 'features--page-transition '
-    endif
-  %}
-
-  <body class="{{ features_class }} color-scheme color-scheme--{{ settings.default_color_scheme.id }}">
+  <body class="template-{{ template.name | handle }} {{ features_class }} color-scheme color-scheme--{{ settings.default_color_scheme.id }}">
     {%- render 'shadow-dom-templates' -%}
 
     <loading-bar class="loading-bar" aria-hidden="true"></loading-bar>
     <a href="#main" allow-hash-change class="skip-to-content sr-only">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
     <span id="header-scroll-tracker" style="position: absolute; width: 1px; height: 1px; top: var(--header-scroll-tracker-offset, 10px); left: 0;">
-      
+      {%- comment -%}
+        This allows our theme to track when the user has scrolled a given amount of pixels, without relying on a global scroll listener. This helps
+        to improve performance and reduce reflows.
+      {%- endcomment -%}
     </span>
 
     {%- if request.page_type != 'password' -%}
@@ -99,12 +178,34 @@
     {%- endif -%}
 
     <main id="main" class="anchor">
+      
       {{ content_for_layout }}
 
-      
+      {%- comment -%}
+      IMPLEMENTATION NOTE: For best semantics, having the footer group outside the main would be slightly better, but
+        moving it inside the main allows to have all the sections (including sections inside the footer group) to be
+        consecutive, and hence having a cleaner margin collapsing management.
+      {%- endcomment -%}
       {%- if request.page_type != 'password' -%}
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
+    
+    {%- render "ecom_footer"-%}
+    
+    <!-- Stamped -->
+    
+    <script>
+      function myInit(){
+        StampedFn.init({ 
+        apiKey: 'pubkey-Pmg59JyYIEu3bky3rI3d43pTNE8h77', 
+        sId: '85047' });
+      }
+    </script>
+    
+    <script onload="myInit()" type="lazyload_js" data-src="https://cdn1.stamped.io/files/widget.min.js"></script>
+    <!-- End Stamped -->
+    {%- render 'footer_file' -%}
+    {%- render 'footer-app-block' -%}
   </body>
 </html>

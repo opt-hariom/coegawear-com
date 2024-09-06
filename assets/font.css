@@ -1,0 +1,54 @@
+ @font-face {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+  src: url("//www.coegawear.com/cdn/fonts/playfair_display/playfairdisplay_n7.1e0ea1cc7a9e4ffdfd6c80b1742be1b89bbe2665.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=da5723b4f7e6522e486fb289132df7672a919dac991696add8927b14ae68e52b") format("woff2"),
+       url("//www.coegawear.com/cdn/fonts/playfair_display/playfairdisplay_n7.40a558d0a1f7faa9f18d658a9ad541610d181d3b.woff?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=cf16402aea0c3abb52a6f9903919fc6a5499cd69bc0fc29d7f7dad9fef4e482e") format("woff");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+  src: url("//www.coegawear.com/cdn/fonts/playfair_display/playfairdisplay_i7.7b5eb632a605dbb99140d4e15db5828adc5a093e.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=32c85bfd108ea042ee9767bcd045de92177a402ea5cd6040ed03801bae0fda74") format("woff2"),
+       url("//www.coegawear.com/cdn/fonts/playfair_display/playfairdisplay_i7.d164241d6fe16befc328a085280a1ffcaa6c95cc.woff?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=a47153f07620472fde8cd5dd4d5d50d2d746c9a890d1b28b36249040583a828c") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_n4.1d581f6d4bf1a97f4cbc0b88b933bc136d38d178.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=9d773b354655adc11c157156faa1bdb4d000c037e585456efde0287161b95446") format("woff2"),
+       url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_n4.cfce41a967758ce5a9b7d48daeb5b028fd977a9b.woff?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=ac1f4b0922b94ad35368b09bf63c4050bcc2634524934b903571b3bc8a32236e") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 400;
+  font-style: italic;
+  font-display: fallback;
+  src: url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_i4.ae02483b3d5e8777d0d4a4ccf396482c364d8955.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=9ab7923d331cf216869b78b7e2b0dad23bb29dbd652c63d02af59e57838f87c4") format("woff2"),
+       url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_i4.ba28d1a04ec09448de486d83c63235903dfc0af8.woff?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=c5cfc9d00826c13bcb0925e4d2435e454de9eec8e1fb4e69ac5f9a82e6ebe7ec") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+  src: url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_n7.c496e9cf2031deec4c4bca338faa81971c8631d4.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=0e542ce84ae54d557f1cdc96adaddeafb53e531697e8a7f10e60943662e20ca8") format("woff2"),
+       url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_n7.78b0223375c94b39ce1af7e09a0225f2bb3d05f7.woff?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=4a7a3618f0901d4575430462f037d507dea781e745e138b77ebd4b147bd5b04c") format("woff");
+}
+
+@font-face {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-style: italic;
+  font-display: fallback;
+  src: url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_i7.83866c3eec90071fa974c17980ffb42977f9e667.woff2?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=99e890ac2b9c21fadaba96681658fd85aba7894b55d4f92fdb2a6d41a2af3e69") format("woff2"),
+       url("//www.coegawear.com/cdn/fonts/montserrat/montserrat_i7.25524241b12d864609c85325613d60efcf1a87e3.woff?h1=c3RvcmUuY29lZ2F3ZWFyLmNvbQ&h2=Y29lZ2F3ZWFyLmNvbQ&h3=Y29lZ2F3ZWFyLmFjY291bnQubXlzaG9waWZ5LmNvbQ&hmac=5b7cc2c285551b509ad42c1858b954850beab4e2a9f069fab9d2fbc00e2eecf1") format("woff");
+}
+
